@@ -100,9 +100,16 @@
         <artifactId>commons-lang</artifactId>
         <version>2.6</version>
     </dependency>
-    ————————————————
-    版权声明：本文为CSDN博主「leo825...」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-    原文链接：https://blog.csdn.net/u011047968/article/details/105670154
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+        </dependency>
+
 
     </dependencies>
 

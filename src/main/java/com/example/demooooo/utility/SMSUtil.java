@@ -14,11 +14,18 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class SMSUtil {
-
+    /**
+     * 发送短信验证码
+     * @param phone  接收短信的手机号
+     * @param code 短信中的验证码的值
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     public static SendSmsResponseBody sendSMS(String phone, String code) throws ExecutionException, InterruptedException {
         StaticCredentialProvider provider = StaticCredentialProvider.create(Credential.builder()
-                .accessKeyId("LTAI5tLb7G9LK5B3BT2QAx5L")
-                .accessKeySecret("p5E8IL0bgnfnTtLskKAX3qIGncykke")
+                .accessKeyId("LTAI5t5yDFvMwNmn2RRcdXDL")
+                .accessKeySecret("Wvsh1n1yz7lmC1DL7b3Q406DkrLnzI")
                 //.securityToken("<your-token>") // use STS token
                 .build());
 
@@ -40,8 +47,8 @@ public class SMSUtil {
 
         // Parameter settings for API request
         SendSmsRequest sendSmsRequest = SendSmsRequest.builder()
-                .signName("韩帅鹏的博客") // 签名的名称
-                .templateCode("SMS_461870177")//模板的名称
+                .signName("feddy的博客") // 签名的名称
+                .templateCode("SMS_461796166")//模板的名称
                 .phoneNumbers(phone)
                 .templateParam("{\"code\":\"" + code + "\"}")
                 // Request-level configuration rewrite, can set Http request parameters, etc.
@@ -65,5 +72,4 @@ public class SMSUtil {
         client.close();
         return resp.getBody();
     }
-
 }

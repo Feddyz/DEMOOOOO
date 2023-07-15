@@ -2,13 +2,15 @@ package com.example.demooooo.utility;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.Base64;
+import java.util.Random;
+import java.util.UUID;
 
+public class StringUtil {
 
-public class String {
-
-    public static java.lang.String randomNumber(int count){
+    public static String randomNumber(int count){
         // 一个容器来装字符串
         StringBuilder stringBuilder = new StringBuilder();
         //java产生随机数
@@ -19,10 +21,10 @@ public class String {
         }
         return stringBuilder.toString();
     }
-    public static java.lang.String uuid (){
+    public static String uuid (){
         return UUID.randomUUID().toString().replace("-","");
     }
-    public static java.lang.String changeImage2String(BufferedImage bufferedImage){
+    public static String changeImage2String(BufferedImage bufferedImage){
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             ImageIO.write(bufferedImage,"jpg",bos);
@@ -31,5 +33,4 @@ public class String {
         }
         return "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bos.toByteArray());
     }
-
 }
